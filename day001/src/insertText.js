@@ -9,19 +9,19 @@
 export function insertText(root, text, path) {
     // 获取指定path的element
     var node = getNodeByPath(root, path);
-    if (node.text) {
-        node = {text: node.text + text};
+    if (text) {
+        node.text = node.text + text;
     }
-    console.log(window.root[0].children[0] === node,window.root[0].children[0],node)
+    // console.log(root[0].children[0] === node, root[0].children[0], node)
 
 }
 function getNodeByPath(root, path) {
-    return root[0].children[0]
+    // return root[0].children[0]
     var node = root;
     console.log(window.root === root)
     for (var i = 0; i < path.length; i++) {
         const p = path[i]
-        node = node[p] ||node.children[p];
+        node = node[p] || node.children[p];
     }
     console.log(node)
     return node;
@@ -33,7 +33,7 @@ export function getString(root) {
         const node = nodes[i];
         if (node.text) {
             str = str + node.text
-        }else{
+        } else {
             str = str + getString(node)
         }
     }
@@ -41,7 +41,7 @@ export function getString(root) {
 }
 
 
-// var root = [{ type: 'p', children: [{ text: '大橘' },{ type: 'p', children: [{ text: '大橘' },{ type: 'p', children: [{ text: '大橘' },{ type: 'p', children: [{ text: '大橘' }] }] }] }] }];
-// insertText(root, '大橘', [0]);
+// var root = [{ type: 'p', children: [{ text: '大橘' }, { type: 'p', children: [{ text: '大橘' }, { type: 'p', children: [{ text: '大橘' }, { type: 'p', children: [{ text: '大橘' }] }] }] }] }];
+// insertText(root, '大橘aa', [0, 0]);
 // console.log(JSON.stringify(root));
 // console.log(getString(root))

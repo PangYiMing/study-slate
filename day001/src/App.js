@@ -11,8 +11,8 @@ function App() {
     function updateValue(e) {
       e.preventDefault()
       e.stopPropagation()
-      insertText(window.root,e.data,[0,0])
-      console.log(e.data,window.root)
+      insertText(window.root, e.data, [0,0])
+      console.log(e.data, window.root)
       
       input.textContent = getString(window.root)
       
