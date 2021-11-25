@@ -1,5 +1,5 @@
 import './App.css';
-import {useState,useEffect} from 'react'
+import {useEffect} from 'react'
 import {getString, insertText} from './insertText'
 window.root =[{ type: 'p', children: [{ text: '' }] }]
 function App() {
