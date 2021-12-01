@@ -12,8 +12,6 @@ export function insertText(root, text, path) {
     if (text) {
         node.text = node.text + text;
     }
-    // console.log(root[0].children[0] === node, root[0].children[0], node)
-
 }
 function getNodeByPath(root, path) {
     // return root[0].children[0]
@@ -23,7 +21,6 @@ function getNodeByPath(root, path) {
         const p = path[i]
         node = node[p] || node.children[p];
     }
-    console.log(node)
     return node;
 }
 export function getString(root) {
